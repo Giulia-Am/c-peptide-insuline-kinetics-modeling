@@ -19,7 +19,7 @@ Simply download/clone the entire folder as-is and set it as your MATLAB current 
 | 4 | **C-Peptide I/O Estimation (v2)** | Compartmental (mechanistic) LS/WLS estimation of k01, k12, k21, V1; model comparison, Monte Carlo simulation, and Bootstrap uncertainty analysis. |
 | 5 | **Enzymatic Kinetics Simulation** | ODE-based simulation of enzyme-substrate kinetics under different enzyme/substrate ratios, carbonic anhydrase kinetics, and competitive/uncompetitive/non-competitive inhibition mechanisms. |
 | 6 | **Multiple Linear Regression (Van Cauter Model)** | Population-based regression of PK parameters (Volume, half-lives, Fraction) against anthropometric covariates, stepwise variable selection, confidence intervals, and individual parameter prediction. |
-| 7 | **Deconvolution ** | Reconstruction of insulin secretion from plasma C-peptide via raw deconvolution and regularized deconvolution (Twomey, GCV, Maximum Likelihood criteria), plus Bayesian estimation (MCMC). |
+| 7 | **Deconvolution** | Reconstruction of insulin secretion from plasma C-peptide via raw deconvolution and regularized deconvolution (Twomey, GCV, Maximum Likelihood criteria), plus Bayesian estimation (MCMC). |
 
 
 > Scripts 1 and 7 are fully self-contained: their helper functions (`optimal_sampling_obj`, `fun_MM`) are defined as local functions at the bottom of the file and require no additional setup.
