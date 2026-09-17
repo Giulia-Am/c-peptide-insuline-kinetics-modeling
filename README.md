@@ -1,20 +1,11 @@
 # Pharmacokinetic & Enzymatic Kinetics Modeling Suite (MATLAB)
 
-This repository contains a collection of MATLAB scripts developed for the analysis, simulation, and parameter estimation of pharmacokinetic (PK) and enzymatic kinetics models. The scripts cover compartmental modeling, input-output parameter estimation, population analysis, deconvolution, multiple regression, and nonlinear kinetics.
-
+This repository contains a collection of MATLAB scripts developed for the analysis, simulation, and parameter estimation of pharmacokinetic (PK) and enzymatic kinetics models. The scripts cover liear and nonlinear compartmental simulation, input-output parameter estimation, model identification, enzymatic reaction kinetics, population analysis,multiple regression and deconvolution-based estimation of insulin secretion.  
 ## Folder Structure
 
-For every script to run correctly, all files must be placed in the **same working directory** (or added to the MATLAB path). The project is organized into the following categories:
+All files — main scripts, custom function files (.m), and datasets/data-loading scripts — are kept together in a single flat folder, with no subfolder separation between scripts, functions, and data. This is intentional: since MATLAB only needs every file to be on the current path, keeping everything in one directory is the simplest way to guarantee that all scripts run without additional configuration.
 
-```
-project/
-│
-├── scripts/            # Main analysis scripts (the .m files listed below)
-├── functions/          # Custom functions required by the scripts
-└── data/                # Required datasets and data-loading scripts
-```
-
-You can either keep this structure and add all folders to the MATLAB path, or flatten everything into a single working directory — both approaches work as long as every file below is reachable.
+Simply download/clone the entire folder as-is and set it as your MATLAB current working directory (or add it to the path) — no reorganization is needed.
 
 ---
 
@@ -23,12 +14,13 @@ You can either keep this structure and add all folders to the MATLAB path, or fl
 | # | Script (topic) | Description |
 |---|---|---|
 | 1 | **PK Models – LTI Systems** | One- and multi-compartment PK models (IV bolus, extravascular absorption, two- and three-compartment models), Bode analysis, impulse response, non-compartmental parameters (AUC, AUMC, MRT, CL), optimal sampling design, repeated dosing simulation. |
-| 2 | **C-Peptide I/O Estimation (v1)** | Weighted Least Squares (WLS) fitting of bi-exponential C-peptide kinetics across 7 subjects, plus population analysis (NAD, NPD, STS). |
-| 3 | **C-Peptide I/O Estimation (v2)** | Compartmental (mechanistic) LS/WLS estimation of k01, k12, k21, V1; model comparison, Monte Carlo simulation, and Bootstrap uncertainty analysis. |
-| 4 | **Deconvolution (Exercise 7)** | Reconstruction of insulin secretion from plasma C-peptide via raw deconvolution and regularized deconvolution (Twomey, GCV, Maximum Likelihood criteria), plus Bayesian estimation (MCMC). |
+| 2 | **Nonlinear Compartmental Models** | Comparison of linear vs. nonlinear (Michaelis-Menten) absorption kinetics, sensitivity analysis, and repeated dosing under nonlinear absorption. |
+| 3 | **C-Peptide I/O Estimation (v1)** | Weighted Least Squares (WLS) fitting of bi-exponential C-peptide kinetics across 7 subjects, plus population analysis (NAD, NPD, STS). |
+| 4 | **C-Peptide I/O Estimation (v2)** | Compartmental (mechanistic) LS/WLS estimation of k01, k12, k21, V1; model comparison, Monte Carlo simulation, and Bootstrap uncertainty analysis. |
 | 5 | **Enzymatic Kinetics Simulation** | ODE-based simulation of enzyme-substrate kinetics under different enzyme/substrate ratios, carbonic anhydrase kinetics, and competitive/uncompetitive/non-competitive inhibition mechanisms. |
 | 6 | **Multiple Linear Regression (Van Cauter Model)** | Population-based regression of PK parameters (Volume, half-lives, Fraction) against anthropometric covariates, stepwise variable selection, confidence intervals, and individual parameter prediction. |
-| 7 | **Nonlinear Compartmental Models** | Comparison of linear vs. nonlinear (Michaelis-Menten) absorption kinetics, sensitivity analysis, and repeated dosing under nonlinear absorption. |
+| 7 | **Deconvolution (Exercise 7)** | Reconstruction of insulin secretion from plasma C-peptide via raw deconvolution and regularized deconvolution (Twomey, GCV, Maximum Likelihood criteria), plus Bayesian estimation (MCMC). |
+
 
 > Scripts 1 and 7 are fully self-contained: their helper functions (`optimal_sampling_obj`, `fun_MM`) are defined as local functions at the bottom of the file and require no additional setup.
 
@@ -85,7 +77,8 @@ The following user-defined `.m` function files **must be present in the working 
 
 ## 6. Quick Start
 
-1. Place all script files, the function files listed in Section 2, and the datasets listed in Section 3 in the same folder.
+1. Keep all files — scripts, functions, and data — in the same folder (no reorganization needed).
 2. Open MATLAB and set this folder as the current working directory (or add it to the path).
 3. Run the desired script (e.g., type its filename without the `.m` extension in the Command Window, or open it in the Editor and press **Run**).
 4. Follow any console prompts (subject number, anthropometric data) when requested.
+
