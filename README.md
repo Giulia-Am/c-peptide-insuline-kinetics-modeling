@@ -7,6 +7,7 @@ All files — main scripts, custom function files (.m), and datasets/data-loadin
 
 Simply download/clone the entire folder as-is and set it as your MATLAB current working directory (or add it to the path) — no reorganization is needed.
 
+
 ---
 
 ## 1. Main Scripts
@@ -34,16 +35,20 @@ The following user-defined `.m` function files **must be present in the working 
 |---|---|---|
 | `residui.m` | C-Peptide I/O Estimation (v1) | Computes weighted residuals for the bi-exponential model, used by `lsqnonlin`. |
 | `residui_new.m` | C-Peptide I/O Estimation (v2) | Computes weighted residuals for the compartmental model (parameters k01, k12, k21, V1). |
-| `discrepanza.m` | Deconvolution (Exercise 7) | Objective function implementing Twomey's discrepancy criterion for regularization parameter (γ) selection. |
-| `discrepanza_post.m` | Deconvolution (Exercise 7) | Computes the regularized solution, RSS, and residuals for a given γ. |
-| `crossvalidation.m` | Deconvolution (Exercise 7) | Objective function implementing the Generalized Cross-Validation (GCV) criterion. |
-| `mlikelihood.m` | Deconvolution (Exercise 7) | Objective function implementing the Maximum Likelihood criterion for γ selection. |
 | `fun_enzimi.m` | Enzymatic Kinetics Simulation | ODE system for basic enzyme-substrate kinetics (with product recombination). |
 | `fun_enzimi_co2.m` | Enzymatic Kinetics Simulation | ODE system for carbonic anhydrase kinetics (no recombination, k₋₂ = 0). |
 | `fun_enzimi_co2_competitiva.m` | Enzymatic Kinetics Simulation | ODE system for competitive inhibition. |
 | `fun_enzimi_co2_anticompetitiva.m` | Enzymatic Kinetics Simulation | ODE system for uncompetitive inhibition. |
 | `fun_enzimi_co2_noncompetitiva.m` | Enzymatic Kinetics Simulation | ODE system for non-competitive inhibition. |
-| `stepwise.m` | Multiple Linear Regression (Van Cauter Model) | Custom forward stepwise regression routine (returns R², selected coefficients, selected regressor matrix, and selected indices). **Not** the built-in Statistics Toolbox function — signature and outputs are project-specific. |
+| `stepwise.m` | Multiple Linear Regression (Van Cauter Model) | Custom forward stepwise regression routine (returns R², selected coefficients, selected regressor matrix, and selected indices). 
+| `regressione.m` | Multiple Linear Regression (Van Cauter Model)| Computes Ordinary Least Squares (OLS) regression coefficients, fitted values, adjusted R-qaured, and overall model significance (Ftest). |
+| `r2adj.m` | Multiple Linear Regression (Van Cauter Model) | Calculates the adjusted R-squared and the F-test statistic to evaluate the goodness of fit and overall statistical significance of a regression model.. |
+| `discrepanza.m` | Deconvolution  | Objective function implementing Twomey's discrepancy criterion for regularization parameter (γ) selection. |
+| `discrepanza_post.m` | Deconvolution  | Computes the regularized solution, RSS, and residuals for a given γ. |
+| `crossvalidation.m` | Deconvolution  | Objective function implementing the Generalized Cross-Validation (GCV) criterion. |
+| `mlikelihood.m` | Deconvolution  | Objective function implementing the Maximum Likelihood criterion for γ selection. |
+
+**Not** the built-in Statistics Toolbox function — signature and outputs are project-specific. |
 
 ---
 
